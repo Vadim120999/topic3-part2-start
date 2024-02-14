@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.topic3.android.reddit.R
+import com.topic3.android.reddit.components.BackgroundText
 import com.topic3.android.reddit.models.SubredditModel
 
 val subreddits = listOf(
@@ -207,19 +208,13 @@ fun Community(text: String, modifier: Modifier = Modifier,
 
 @Composable
 fun Communities(modifier: Modifier = Modifier) {
-    //TODO add your code here
-}
+    mainCommunities.forEach{
+        Community(text = stringResource(it))
 
-@Preview
-@Composable
-fun CommunityPreview() {
-    Community(stringResource(id = R.string.raywenderlich_com))
-}
-
-@Preview
-@Composable
-fun CommunitiesPreview() {
-    Column {
-        Communities()
+    }
+    Spacer(modifier = modifier.height(4.dp))
+    BackgroundText(stringResource(R.string.communities))
+    communities.forEach{
+        Community(text = stringResource(it))
     }
 }
