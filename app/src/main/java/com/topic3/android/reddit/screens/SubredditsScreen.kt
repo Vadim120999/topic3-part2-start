@@ -73,7 +73,16 @@ fun SubredditsScreen(modifier: Modifier = Modifier) {
 
 @Composable
 fun Subreddit(subredditModel: SubredditModel, modifier: Modifier = Modifier) {
-    //TODO add your code here
+    Card(
+        backgroundColor = MaterialTheme.colors.surface,
+        shape = RoundedCornerShape(4.dp),
+        modifier = modifier
+            .size(120.dp)
+            .padding(start = 2.dp, end = 2.dp, top = 4.dp, bottom = 4.dp)
+    ) {
+        SubredditBody(subredditModel)
+
+    }
 }
 
 @Composable
@@ -177,12 +186,6 @@ fun Community(text: String, modifier: Modifier = Modifier) {
 @Composable
 fun Communities(modifier: Modifier = Modifier) {
     //TODO add your code here
-}
-
-@Preview
-@Composable
-fun SubredditBodyPreview() {
-    SubredditBody(SubredditModel.DEFAULT_SUBREDDIT)
 }
 
 @Preview
